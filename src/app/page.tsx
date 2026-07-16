@@ -5,6 +5,8 @@ import Services from "@/components/sections/Services";
 import WhyUs from "@/components/sections/WhyUs";
 import Contact from "@/components/sections/Contact";
 import Cases from "@/components/sections/Cases";
+import Footer from "@/components/layout/Footer";
+import Stats from "@/components/sections/Stats";
 
 export default function Home() {
   return (
@@ -14,11 +16,14 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <Stats />
         <Services />
         <WhyUs />
         <Cases />
         <Contact />
       </main>
+
+      <Footer />
     </>
   );
 }

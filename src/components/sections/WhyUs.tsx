@@ -1,80 +1,164 @@
-import { Zap, Clock3, ShieldCheck, TrendingUp } from "lucide-react";
+import {
+  Zap,
+  Clock3,
+  ShieldCheck,
+  TrendingUp,
+} from "lucide-react";
+import FadeIn from "@/components/ui/FadeIn";
 
 export default function WhyUs() {
   return (
-    <section className="py-28 bg-black text-white">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="relative overflow-hidden bg-black py-32 text-white">
 
-        <h2 className="text-5xl font-bold text-center">
-          Почему выбирают нас
-        </h2>
+      {/* Фоновое свечение */}
+      <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-blue-500/10 blur-[140px]" />
 
-        <p className="mt-6 text-center text-zinc-400 max-w-2xl mx-auto">
-          Мы внедряем искусственный интеллект и автоматизацию,
-          которые действительно экономят деньги и время бизнеса.
-        </p>
+      <FadeIn>
+        <div className="relative mx-auto max-w-7xl px-6">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20">
+          <div className="mx-auto max-w-3xl text-center">
 
-          <div className="rounded-3xl bg-zinc-900/70 backdrop-blur-xl border border-zinc-800 p-8 hover:border-blue-500 transition-all duration-500">
+            <span className="rounded-full border border-blue-500/30 bg-blue-500/10 px-5 py-2 text-sm font-medium text-blue-400">
+              Наши преимущества
+            </span>
 
-            <Zap className="text-blue-500 mb-6" size={42} />
+            <h2 className="mt-8 text-5xl font-extrabold leading-tight">
+              Почему компании
+              <br />
+              выбирают <span className="text-blue-500">AI Studio</span>
+            </h2>
 
-            <h3 className="text-2xl font-bold">
-              Быстрый запуск
-            </h3>
-
-            <p className="mt-4 text-zinc-400">
-              Большинство проектов запускаются за несколько дней.
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-zinc-400">
+              Мы создаем AI-решения, которые внедряются быстро,
+              окупаются в короткие сроки и продолжают приносить
+              пользу бизнесу каждый день.
             </p>
 
           </div>
 
-          <div className="rounded-3xl bg-zinc-900/70 backdrop-blur-xl border border-zinc-800 p-8 hover:border-blue-500 transition-all duration-500">
+          {/* Карточки */}
 
-            <Clock3 className="text-blue-500 mb-6" size={42} />
+          <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
 
-            <h3 className="text-2xl font-bold">
-              Экономия времени
-            </h3>
+            <div className="group rounded-3xl border border-zinc-800 bg-zinc-900/60 p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-blue-500">
 
-            <p className="mt-4 text-zinc-400">
-              Автоматизация снимает рутинные задачи с сотрудников.
-            </p>
+              <Zap
+                size={46}
+                className="text-blue-400 transition duration-300 group-hover:scale-110"
+              />
+
+              <h3 className="mt-8 text-2xl font-bold">
+                Быстрый запуск
+              </h3>
+
+              <p className="mt-5 leading-8 text-zinc-400">
+                Большинство проектов запускаются
+                менее чем за две недели.
+              </p>
+
+            </div>
+
+            <div className="group rounded-3xl border border-zinc-800 bg-zinc-900/60 p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-blue-500">
+
+              <Clock3
+                size={46}
+                className="text-blue-400 transition duration-300 group-hover:scale-110"
+              />
+
+              <h3 className="mt-8 text-2xl font-bold">
+                Экономия времени
+              </h3>
+
+              <p className="mt-5 leading-8 text-zinc-400">
+                Автоматизация освобождает сотрудников
+                от ежедневной рутины.
+              </p>
+
+            </div>
+
+            <div className="group rounded-3xl border border-zinc-800 bg-zinc-900/60 p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-blue-500">
+
+              <ShieldCheck
+                size={46}
+                className="text-blue-400 transition duration-300 group-hover:scale-110"
+              />
+
+              <h3 className="mt-8 text-2xl font-bold">
+                Надёжность
+              </h3>
+
+              <p className="mt-5 leading-8 text-zinc-400">
+                Используем современные AI-модели,
+                безопасные интеграции и проверенную архитектуру.
+              </p>
+
+            </div>
+
+            <div className="group rounded-3xl border border-zinc-800 bg-zinc-900/60 p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-blue-500">
+
+              <TrendingUp
+                size={46}
+                className="text-blue-400 transition duration-300 group-hover:scale-110"
+              />
+
+              <h3 className="mt-8 text-2xl font-bold">
+                Рост прибыли
+              </h3>
+
+              <p className="mt-5 leading-8 text-zinc-400">
+                AI помогает увеличить скорость работы,
+                качество обслуживания и доход компании.
+              </p>
+
+            </div>
 
           </div>
 
-          <div className="rounded-3xl bg-zinc-900/70 backdrop-blur-xl border border-zinc-800 p-8 hover:border-blue-500 transition-all duration-500">
+          {/* Статистика */}
 
-            <ShieldCheck className="text-blue-500 mb-6" size={42} />
+          <div className="mt-24 grid grid-cols-2 gap-8 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-10 backdrop-blur-xl md:grid-cols-4">
 
-            <h3 className="text-2xl font-bold">
-              Надёжность
-            </h3>
+            <div className="text-center">
+              <div className="text-5xl font-extrabold text-blue-400">
+                50+
+              </div>
+              <p className="mt-3 text-zinc-400">
+                AI-проектов
+              </p>
+            </div>
 
-            <p className="mt-4 text-zinc-400">
-              Используем современные технологии и проверенные решения.
-            </p>
+            <div className="text-center">
+              <div className="text-5xl font-extrabold text-blue-400">
+                3000+
+              </div>
+              <p className="mt-3 text-zinc-400">
+                часов автоматизации
+              </p>
+            </div>
 
-          </div>
+            <div className="text-center">
+              <div className="text-5xl font-extrabold text-blue-400">
+                98%
+              </div>
+              <p className="mt-3 text-zinc-400">
+                довольных клиентов
+              </p>
+            </div>
 
-          <div className="rounded-3xl bg-zinc-900/70 backdrop-blur-xl border border-zinc-800 p-8 hover:border-blue-500 transition-all duration-500">
-
-            <TrendingUp className="text-blue-500 mb-6" size={42} />
-
-            <h3 className="text-2xl font-bold">
-              Рост прибыли
-            </h3>
-
-            <p className="mt-4 text-zinc-400">
-              Помогаем бизнесу зарабатывать больше благодаря AI.
-            </p>
+            <div className="text-center">
+              <div className="text-5xl font-extrabold text-blue-400">
+                24/7
+              </div>
+              <p className="mt-3 text-zinc-400">
+                поддержка AI
+              </p>
+            </div>
 
           </div>
 
         </div>
+      </FadeIn>
 
-      </div>
     </section>
   );
 }
