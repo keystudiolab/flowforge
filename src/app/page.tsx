@@ -7,6 +7,7 @@ import Contact from "@/components/sections/Contact";
 import Cases from "@/components/sections/Cases";
 import Footer from "@/components/layout/Footer";
 import Stats from "@/components/sections/Stats";
+import DentalProduct from "@/components/sections/DentalProduct";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <About />
         <Stats />
         <Services />
+        <DentalProduct />
         <WhyUs />
         <Cases />
         <Contact />

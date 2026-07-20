@@ -36,7 +36,7 @@ export default function Hero() {
             transition={{ delay: 0.15, duration: 0.8 }}
             className="mt-8 text-5xl font-extrabold leading-tight md:text-7xl"
           >
-            AI, который
+            AI который 
             <br />
 
             <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent">
