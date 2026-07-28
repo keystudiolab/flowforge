@@ -3,6 +3,7 @@ import HowItWorks from "@/components/home/HowItWorks";
 import Industries from "@/components/home/Industries";
 import WhyFlowForge from "@/components/home/WhyFlowForge";
 import LiveDemo from "@/components/home/LiveDemo";
+import EnglishNavbar from "@/components/home/EnglishNavbar";
 
 export default function EnglishHome() {
   return (

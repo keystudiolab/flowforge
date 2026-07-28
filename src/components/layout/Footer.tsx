@@ -23,6 +23,7 @@ export default function Footer() {
 
       <div className="relative mx-auto max-w-7xl px-6 py-20">
         <div className="grid gap-14 lg:grid-cols-[1.4fr_0.8fr_0.8fr_1fr]">
+
           <div>
             <button
               type="button"
@@ -42,8 +43,9 @@ export default function Footer() {
             </button>
 
             <p className="mt-5 max-w-md text-lg leading-8 text-zinc-400">
-              AI Employees that answer customers, qualify leads, book
-              appointments and automate repetitive work around the clock.
+              Мы создаём AI-сотрудников, Telegram-ботов и автоматизацию
+              бизнес-процессов, которые работают 24/7 и помогают
+              компаниям расти.
             </p>
 
             <button
@@ -51,31 +53,39 @@ export default function Footer() {
               onClick={() => scrollTo("contact")}
               className="mt-8 inline-flex items-center gap-3 rounded-2xl bg-blue-600 px-6 py-4 font-semibold transition duration-300 hover:scale-[1.03] hover:bg-blue-500"
             >
-              Book a Demo
+              Получить AI-аудит
               <ArrowUpRight size={19} />
             </button>
           </div>
 
           <div>
             <h3 className="font-semibold text-white">
-              Product
+              Навигация
             </h3>
 
             <div className="mt-5 flex flex-col gap-4 text-zinc-400">
               <button
                 type="button"
-                onClick={() => scrollTo("employees")}
+                onClick={() => scrollTo("about")}
                 className="w-fit transition hover:text-white"
               >
-                AI Employees
+                О нас
               </button>
 
               <button
                 type="button"
-                onClick={() => scrollTo("industries")}
+                onClick={() => scrollTo("services")}
                 className="w-fit transition hover:text-white"
               >
-                Industries
+                Услуги
+              </button>
+
+              <button
+                type="button"
+                onClick={() => scrollTo("cases")}
+                className="w-fit transition hover:text-white"
+              >
+                Кейсы
               </button>
 
               <button
@@ -83,31 +93,32 @@ export default function Footer() {
                 onClick={() => scrollTo("contact")}
                 className="w-fit transition hover:text-white"
               >
-                Book a Demo
+                Контакты
               </button>
             </div>
           </div>
 
           <div>
             <h3 className="font-semibold text-white">
-              Solutions
+              Решения
             </h3>
 
             <div className="mt-5 flex flex-col gap-4 text-zinc-400">
-              <span>AI Dental Receptionist</span>
-              <span>AI Sales Employee</span>
-              <span>AI Customer Support</span>
-              <span>AI Real Estate Assistant</span>
+              <span>AI для стоматологий</span>
+              <span>AI для отдела продаж</span>
+              <span>AI для поддержки клиентов</span>
+              <span>Индивидуальная автоматизация</span>
             </div>
           </div>
 
           <div>
             <h3 className="font-semibold text-white">
-              Connect
+              Связаться
             </h3>
 
             <p className="mt-5 max-w-sm leading-7 text-zinc-400">
-              Try the live AI Employee demo or contact FlowForge directly.
+              Попробуйте демо или свяжитесь с нами для бесплатной
+              консультации.
             </p>
 
             <div className="mt-6 flex flex-col gap-3">
@@ -118,7 +129,7 @@ export default function Footer() {
                 className="inline-flex items-center gap-3 rounded-2xl border border-zinc-800 bg-zinc-950 px-5 py-3 font-semibold text-zinc-300 transition hover:border-blue-500/60 hover:text-white"
               >
                 <MessageCircle size={19} />
-                Live Demo
+                Демо-бот
               </a>
 
               <a
@@ -136,7 +147,7 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col items-center justify-between gap-5 border-t border-zinc-800 pt-8 text-sm text-zinc-500 md:flex-row">
           <p>
-            © {currentYear} FlowForge. All rights reserved.
+            © {currentYear} FlowForge. Все права защищены.
           </p>
 
           <div className="flex items-center gap-6">
@@ -164,7 +175,7 @@ export default function Footer() {
               }
               className="inline-flex items-center gap-2 transition hover:text-white"
             >
-              Back to top
+              Наверх
               <ArrowUp size={17} />
             </button>
           </div>

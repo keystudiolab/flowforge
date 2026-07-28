@@ -29,24 +29,31 @@ export default function Navbar() {
 
         <nav className="hidden items-center gap-10 text-sm font-medium text-zinc-400 lg:flex">
           <button
-            onClick={() => scrollTo("employees")}
+            onClick={() => scrollTo("about")}
             className="transition hover:text-white"
           >
-            AI Employees
+            О нас
           </button>
 
           <button
-            onClick={() => scrollTo("industries")}
+            onClick={() => scrollTo("services")}
             className="transition hover:text-white"
           >
-            Industries
+            Услуги
+          </button>
+
+          <button
+            onClick={() => scrollTo("cases")}
+            className="transition hover:text-white"
+          >
+            Кейсы
           </button>
 
           <button
             onClick={() => scrollTo("contact")}
             className="transition hover:text-white"
           >
-            Contact
+            Контакты
           </button>
         </nav>
 
@@ -54,7 +61,7 @@ export default function Navbar() {
           onClick={() => scrollTo("contact")}
           className="hidden items-center gap-2 rounded-2xl bg-blue-600 px-6 py-3 font-semibold text-white transition duration-300 hover:scale-105 hover:bg-blue-500 lg:flex"
         >
-          Book Demo
+          Получить AI-аудит
           <ArrowUpRight size={18} />
         </button>
 
@@ -70,31 +77,38 @@ export default function Navbar() {
         <div className="border-t border-zinc-800 bg-black/95 backdrop-blur-3xl lg:hidden">
           <div className="flex flex-col gap-2 p-6">
             <button
-              onClick={() => scrollTo("employees")}
+              onClick={() => scrollTo("about")}
               className="rounded-xl p-4 text-left text-zinc-300 transition hover:bg-zinc-900"
             >
-              AI Employees
+              О нас
             </button>
 
             <button
-              onClick={() => scrollTo("industries")}
+              onClick={() => scrollTo("services")}
               className="rounded-xl p-4 text-left text-zinc-300 transition hover:bg-zinc-900"
             >
-              Industries
+              Услуги
+            </button>
+
+            <button
+              onClick={() => scrollTo("cases")}
+              className="rounded-xl p-4 text-left text-zinc-300 transition hover:bg-zinc-900"
+            >
+              Кейсы
             </button>
 
             <button
               onClick={() => scrollTo("contact")}
               className="rounded-xl p-4 text-left text-zinc-300 transition hover:bg-zinc-900"
             >
-              Contact
+              Контакты
             </button>
 
             <button
               onClick={() => scrollTo("contact")}
               className="mt-4 rounded-2xl bg-blue-600 py-4 font-semibold text-white"
             >
-              Book Demo
+              Получить AI-аудит
             </button>
           </div>
         </div>

@@ -15,7 +15,7 @@ export default function Contact() {
     event.preventDefault();
 
     if (!name.trim() || !email.trim() || !business.trim()) {
-      setError("Please complete all fields.");
+      setError("Пожалуйста, заполните все поля.");
       return;
     }
 
@@ -39,7 +39,7 @@ export default function Contact() {
       const data = await response.json();
 
       if (!response.ok || !data.success) {
-        throw new Error(data.error || "Failed to send demo request");
+        throw new Error(data.error || "Ошибка отправки");
       }
 
       setName("");
@@ -47,8 +47,8 @@ export default function Contact() {
       setBusiness("");
       setSuccess(true);
     } catch (submitError) {
-      console.error("Demo request error:", submitError);
-      setError("Something went wrong. Please try again.");
+      console.error("Ошибка отправки:", submitError);
+      setError("Не удалось отправить заявку. Попробуйте ещё раз.");
     } finally {
       setLoading(false);
     }
@@ -65,17 +65,17 @@ export default function Contact() {
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <span className="inline-flex rounded-full border border-blue-500/30 bg-blue-500/10 px-5 py-2 text-sm font-medium text-blue-400">
-              Book a Demo
+              Бесплатный AI-аудит
             </span>
 
             <h2 className="mt-8 text-4xl font-extrabold leading-tight sm:text-5xl">
-              Hire your first
-              <span className="text-blue-500"> AI Employee</span>
+              Найдём, что можно
+              <span className="text-blue-500"> автоматизировать</span>
             </h2>
 
             <p className="mt-6 text-xl leading-9 text-zinc-400">
-              Tell us about your business and we will prepare a personalized AI
-              Employee demo.
+              Расскажите о своём бизнесе, и мы подготовим персональное
+              AI-решение именно под ваши задачи.
             </p>
           </div>
 
@@ -85,7 +85,7 @@ export default function Contact() {
                 type="text"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
-                placeholder="Full name"
+                placeholder="Ваше имя"
                 autoComplete="name"
                 className="w-full rounded-2xl border border-zinc-700 bg-black p-5 text-white outline-none transition placeholder:text-zinc-600 focus:border-blue-500"
               />
@@ -94,7 +94,7 @@ export default function Contact() {
                 type="email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
-                placeholder="Work email"
+                placeholder="Telegram или Email"
                 autoComplete="email"
                 className="w-full rounded-2xl border border-zinc-700 bg-black p-5 text-white outline-none transition placeholder:text-zinc-600 focus:border-blue-500"
               />
@@ -103,7 +103,7 @@ export default function Contact() {
                 rows={6}
                 value={business}
                 onChange={(event) => setBusiness(event.target.value)}
-                placeholder="Tell us about your business..."
+                placeholder="Кратко опишите вашу задачу..."
                 className="w-full resize-none rounded-2xl border border-zinc-700 bg-black p-5 text-white outline-none transition placeholder:text-zinc-600 focus:border-blue-500"
               />
 
@@ -115,7 +115,7 @@ export default function Contact() {
 
               {success && (
                 <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-emerald-300">
-                  Demo request received. We will contact you shortly.
+                  Заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.
                 </div>
               )}
 
@@ -124,7 +124,9 @@ export default function Contact() {
                 disabled={loading}
                 className="w-full rounded-2xl bg-blue-600 py-5 text-lg font-semibold transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                {loading ? "Sending..." : "Book a Demo"}
+                {loading
+                  ? "Отправка..."
+                  : "Получить бесплатную консультацию"}
               </button>
             </form>
           </div>
