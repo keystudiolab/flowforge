@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 
-export default function Navbar() {
+export default function EnglishNavbar() {
   const [open, setOpen] = useState(false);
 
   const scrollTo = (id: string) => {
@@ -38,26 +38,26 @@ export default function Navbar() {
         <nav className="hidden items-center gap-8 text-sm font-medium text-zinc-400 lg:flex">
           <button
             type="button"
-            onClick={() => scrollTo("about")}
+            onClick={() => scrollTo("employees")}
             className="transition hover:text-white"
           >
-            О нас
+            AI Employees
           </button>
 
           <button
             type="button"
-            onClick={() => scrollTo("services")}
+            onClick={() => scrollTo("process")}
             className="transition hover:text-white"
           >
-            Услуги
+            How It Works
           </button>
 
           <button
             type="button"
-            onClick={() => scrollTo("cases")}
+            onClick={() => scrollTo("industries")}
             className="transition hover:text-white"
           >
-            Кейсы
+            Industries
           </button>
 
           <button
@@ -65,41 +65,39 @@ export default function Navbar() {
             onClick={() => scrollTo("contact")}
             className="transition hover:text-white"
           >
-            Контакты
+            Contact
           </button>
-        </nav>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <div className="flex items-center rounded-xl border border-zinc-800 bg-zinc-950/70 p-1">
+          <div className="flex items-center gap-2 rounded-xl border border-zinc-800 p-1">
             <Link
               href="/"
-              className="rounded-lg bg-zinc-800 px-3 py-2 text-sm text-white"
+              className="rounded-lg px-3 py-2 text-zinc-500 transition hover:text-white"
             >
               RU
             </Link>
 
             <Link
               href="/en"
-              className="rounded-lg px-3 py-2 text-sm text-zinc-500 transition hover:text-white"
+              className="rounded-lg bg-zinc-800 px-3 py-2 text-white"
             >
               EN
             </Link>
           </div>
+        </nav>
 
-          <button
-            type="button"
-            onClick={() => scrollTo("contact")}
-            className="flex items-center gap-2 rounded-2xl bg-blue-600 px-6 py-3 font-semibold text-white transition duration-300 hover:scale-105 hover:bg-blue-500"
-          >
-            Получить AI-аудит
-            <ArrowUpRight size={18} />
-          </button>
-        </div>
+        <button
+          type="button"
+          onClick={() => scrollTo("contact")}
+          className="hidden items-center gap-2 rounded-2xl bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-500 xl:flex"
+        >
+          Book a Demo
+          <ArrowUpRight size={18} />
+        </button>
 
         <button
           type="button"
           onClick={() => setOpen((current) => !current)}
-          aria-label={open ? "Закрыть меню" : "Открыть меню"}
+          aria-label="Open menu"
           className="text-white lg:hidden"
         >
           {open ? <X size={28} /> : <Menu size={28} />}
@@ -107,51 +105,51 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-zinc-800 bg-black/95 backdrop-blur-3xl lg:hidden">
+        <div className="border-t border-zinc-800 bg-black/95 lg:hidden">
           <div className="flex flex-col gap-2 p-6">
             <button
               type="button"
-              onClick={() => scrollTo("about")}
-              className="rounded-xl p-4 text-left text-zinc-300 transition hover:bg-zinc-900"
+              onClick={() => scrollTo("employees")}
+              className="rounded-xl p-4 text-left text-zinc-300"
             >
-              О нас
+              AI Employees
             </button>
 
             <button
               type="button"
-              onClick={() => scrollTo("services")}
-              className="rounded-xl p-4 text-left text-zinc-300 transition hover:bg-zinc-900"
+              onClick={() => scrollTo("process")}
+              className="rounded-xl p-4 text-left text-zinc-300"
             >
-              Услуги
+              How It Works
             </button>
 
             <button
               type="button"
-              onClick={() => scrollTo("cases")}
-              className="rounded-xl p-4 text-left text-zinc-300 transition hover:bg-zinc-900"
+              onClick={() => scrollTo("industries")}
+              className="rounded-xl p-4 text-left text-zinc-300"
             >
-              Кейсы
+              Industries
             </button>
 
             <button
               type="button"
               onClick={() => scrollTo("contact")}
-              className="rounded-xl p-4 text-left text-zinc-300 transition hover:bg-zinc-900"
+              className="rounded-xl p-4 text-left text-zinc-300"
             >
-              Контакты
+              Contact
             </button>
 
             <div className="mt-3 flex gap-3">
               <Link
                 href="/"
-                className="flex-1 rounded-xl bg-zinc-800 py-3 text-center text-white"
+                className="flex-1 rounded-xl border border-zinc-800 py-3 text-center text-zinc-400"
               >
                 RU
               </Link>
 
               <Link
                 href="/en"
-                className="flex-1 rounded-xl border border-zinc-800 py-3 text-center text-zinc-400"
+                className="flex-1 rounded-xl bg-zinc-800 py-3 text-center text-white"
               >
                 EN
               </Link>
@@ -162,7 +160,7 @@ export default function Navbar() {
               onClick={() => scrollTo("contact")}
               className="mt-3 rounded-2xl bg-blue-600 py-4 font-semibold text-white"
             >
-              Получить AI-аудит
+              Book a Demo
             </button>
           </div>
         </div>

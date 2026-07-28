@@ -5,7 +5,7 @@ import FadeIn from "@/components/ui/FadeIn";
 
 export default function Contact() {
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [contact, setContact] = useState("");
   const [business, setBusiness] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -14,8 +14,8 @@ export default function Contact() {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    if (!name.trim() || !email.trim() || !business.trim()) {
-      setError("Пожалуйста, заполните все поля.");
+    if (!name.trim() || !contact.trim() || !business.trim()) {
+      setError("Please complete all fields.");
       return;
     }
 
@@ -31,7 +31,7 @@ export default function Contact() {
         },
         body: JSON.stringify({
           name: name.trim(),
-          telegram: email.trim(),
+          telegram: contact.trim(),
           task: business.trim(),
         }),
       });
@@ -39,16 +39,16 @@ export default function Contact() {
       const data = await response.json();
 
       if (!response.ok || !data.success) {
-        throw new Error(data.error || "Ошибка отправки");
+        throw new Error(data.error || "Submission failed");
       }
 
       setName("");
-      setEmail("");
+      setContact("");
       setBusiness("");
       setSuccess(true);
     } catch (submitError) {
-      console.error("Ошибка отправки:", submitError);
-      setError("Не удалось отправить заявку. Попробуйте ещё раз.");
+      console.error("Submission error:", submitError);
+      setError("Unable to submit your request. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -65,17 +65,17 @@ export default function Contact() {
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <span className="inline-flex rounded-full border border-blue-500/30 bg-blue-500/10 px-5 py-2 text-sm font-medium text-blue-400">
-              Бесплатный AI-аудит
+              Free AI Audit
             </span>
 
             <h2 className="mt-8 text-4xl font-extrabold leading-tight sm:text-5xl">
-              Найдём, что можно
-              <span className="text-blue-500"> автоматизировать</span>
+              Discover what you can
+              <span className="text-blue-500"> automate</span>
             </h2>
 
             <p className="mt-6 text-xl leading-9 text-zinc-400">
-              Расскажите о своём бизнесе, и мы подготовим персональное
-              AI-решение именно под ваши задачи.
+              Tell us about your business and we will prepare a personalized
+              AI solution for your goals.
             </p>
           </div>
 
@@ -85,17 +85,16 @@ export default function Contact() {
                 type="text"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
-                placeholder="Ваше имя"
+                placeholder="Your name"
                 autoComplete="name"
                 className="w-full rounded-2xl border border-zinc-700 bg-black p-5 text-white outline-none transition placeholder:text-zinc-600 focus:border-blue-500"
               />
 
               <input
-                type="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder="Telegram или Email"
-                autoComplete="email"
+                type="text"
+                value={contact}
+                onChange={(event) => setContact(event.target.value)}
+                placeholder="Telegram or Email"
                 className="w-full rounded-2xl border border-zinc-700 bg-black p-5 text-white outline-none transition placeholder:text-zinc-600 focus:border-blue-500"
               />
 
@@ -103,7 +102,7 @@ export default function Contact() {
                 rows={6}
                 value={business}
                 onChange={(event) => setBusiness(event.target.value)}
-                placeholder="Кратко опишите вашу задачу..."
+                placeholder="Briefly describe your business and task..."
                 className="w-full resize-none rounded-2xl border border-zinc-700 bg-black p-5 text-white outline-none transition placeholder:text-zinc-600 focus:border-blue-500"
               />
 
@@ -115,7 +114,8 @@ export default function Contact() {
 
               {success && (
                 <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-emerald-300">
-                  Заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.
+                  Your request has been submitted successfully. We will contact
+                  you shortly.
                 </div>
               )}
 
@@ -125,8 +125,8 @@ export default function Contact() {
                 className="w-full rounded-2xl bg-blue-600 py-5 text-lg font-semibold transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {loading
-                  ? "Отправка..."
-                  : "Получить бесплатную консультацию"}
+                  ? "Submitting..."
+                  : "Get a Free Consultation"}
               </button>
             </form>
           </div>

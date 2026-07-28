@@ -12,24 +12,24 @@ import {
   Target,
   UserRound,
 } from "lucide-react";
-import Modal from "@/components/ui/Modal";
+import Modal from "@/components/en/ui/Modal";
 
 const benefits = [
   {
     icon: <Clock3 size={18} />,
-    text: "Работает 24/7",
+    text: "Works 24/7",
   },
   {
     icon: <Target size={18} />,
-    text: "Не теряет ни одной заявки",
+    text: "Never misses a lead",
   },
   {
     icon: <Sparkles size={18} />,
-    text: "Запуск за несколько дней",
+    text: "Launches in days",
   },
   {
     icon: <ShieldCheck size={18} />,
-    text: "Под ваши бизнес-процессы",
+    text: "Built for your business",
   },
 ];
 
@@ -56,7 +56,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 rounded-full border border-blue-500/30 bg-blue-500/10 px-5 py-2 text-sm font-medium text-blue-400"
             >
               <Sparkles size={16} />
-              AI-сотрудники для бизнеса
+              AI Employees for Business
             </motion.span>
 
             <motion.h1
@@ -65,9 +65,9 @@ export default function Hero() {
               transition={{ delay: 0.12, duration: 0.75 }}
               className="mt-8 max-w-4xl text-5xl font-extrabold leading-[1.05] tracking-[-0.04em] sm:text-6xl lg:text-7xl"
             >
-              Ваш первый
+              Hire your first
               <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-600 bg-clip-text text-transparent">
-                AI-сотрудник.
+                AI Employee.
               </span>
             </motion.h1>
 
@@ -77,9 +77,9 @@ export default function Hero() {
               transition={{ delay: 0.28, duration: 0.75 }}
               className="mt-8 max-w-2xl text-xl leading-9 text-zinc-400"
             >
-              AI-сотрудники отвечают клиентам, принимают заявки,
-              автоматизируют рутинные процессы и помогают бизнесу
-              работать 24/7 без выходных.
+              AI employees that answer customers, capture leads, automate
+              repetitive processes and help your business operate around the
+              clock.
             </motion.p>
 
             <motion.div
@@ -93,7 +93,7 @@ export default function Hero() {
                 onClick={() => setOpen(true)}
                 className="inline-flex items-center justify-center gap-3 rounded-2xl bg-blue-600 px-8 py-4 text-lg font-semibold transition duration-300 hover:scale-[1.03] hover:bg-blue-500"
               >
-                Получить AI-аудит
+                Book a Demo
                 <ArrowRight size={20} />
               </button>
 
@@ -103,7 +103,7 @@ export default function Hero() {
                 rel="noreferrer"
                 className="inline-flex items-center justify-center gap-3 rounded-2xl border border-zinc-700 px-8 py-4 text-lg font-semibold transition duration-300 hover:border-blue-500 hover:bg-white/5"
               >
-                Посмотреть демо
+                Watch Live Demo
                 <MessageCircle size={20} />
               </a>
             </motion.div>
@@ -129,7 +129,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-                    <motion.div
+          <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.35, duration: 0.85 }}
@@ -145,17 +145,17 @@ export default function Hero() {
                   </div>
 
                   <div>
-                    <p className="font-semibold">AI-сотрудник</p>
+                    <p className="font-semibold">AI Employee</p>
 
                     <div className="mt-1 flex items-center gap-2 text-sm text-emerald-400">
                       <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                      Онлайн 24/7
+                      Online 24/7
                     </div>
                   </div>
                 </div>
 
                 <span className="rounded-full border border-zinc-800 bg-zinc-900 px-3 py-1 text-xs text-zinc-500">
-                  Демо
+                  Live Demo
                 </span>
               </div>
 
@@ -166,8 +166,8 @@ export default function Hero() {
                   transition={{ delay: 0.7, duration: 0.5 }}
                   className="max-w-[88%] rounded-2xl rounded-tl-md bg-zinc-800 px-5 py-4 text-sm leading-6 text-zinc-200"
                 >
-                  Здравствуйте! Я помогу подобрать решение, отвечу на вопросы
-                  и помогу оставить заявку. Чем могу помочь?
+                  Hello! I can answer your questions, recommend a solution and
+                  help you submit a request. How can I help?
                 </motion.div>
 
                 <motion.div
@@ -177,7 +177,7 @@ export default function Hero() {
                   className="ml-auto flex max-w-[78%] items-start gap-3 rounded-2xl rounded-tr-md bg-blue-600 px-5 py-4 text-sm leading-6 text-white"
                 >
                   <UserRound size={18} className="mt-0.5 shrink-0" />
-                  Хочу автоматизировать обработку заявок в своей компании.
+                  I want to automate lead handling in my company.
                 </motion.div>
 
                 <motion.div
@@ -186,7 +186,7 @@ export default function Hero() {
                   transition={{ delay: 1.1, duration: 0.5 }}
                   className="max-w-[88%] rounded-2xl rounded-tl-md bg-zinc-800 px-5 py-4 text-sm leading-6 text-zinc-200"
                 >
-                  Отлично! Расскажите, чем занимается ваш бизнес?
+                  Great! What type of business do you run?
                 </motion.div>
 
                 <motion.div
@@ -195,7 +195,7 @@ export default function Hero() {
                   transition={{ delay: 1.3, duration: 0.5 }}
                   className="ml-auto max-w-[65%] rounded-2xl rounded-tr-md bg-blue-600 px-5 py-4 text-sm leading-6 text-white"
                 >
-                  Стоматологическая клиника.
+                  A dental clinic.
                 </motion.div>
               </div>
 
@@ -213,35 +213,31 @@ export default function Hero() {
 
                   <div className="w-full">
                     <p className="font-semibold text-emerald-300">
-                      Заявка успешно сформирована
+                      Lead successfully captured
                     </p>
 
                     <div className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
                       <div className="rounded-xl bg-black/20 p-3">
-                        <p className="text-zinc-500">Компания</p>
+                        <p className="text-zinc-500">Company</p>
+                        <p className="mt-1 text-zinc-200">Dental Clinic</p>
+                      </div>
+
+                      <div className="rounded-xl bg-black/20 p-3">
+                        <p className="text-zinc-500">Solution</p>
                         <p className="mt-1 text-zinc-200">
-                          Dental Clinic
+                          AI Receptionist
                         </p>
                       </div>
 
                       <div className="rounded-xl bg-black/20 p-3">
-                        <p className="text-zinc-500">Задача</p>
-                        <p className="mt-1 text-zinc-200">
-                          AI-администратор
-                        </p>
+                        <p className="text-zinc-500">Status</p>
+                        <p className="mt-1 text-zinc-200">New lead</p>
                       </div>
 
                       <div className="rounded-xl bg-black/20 p-3">
-                        <p className="text-zinc-500">Статус</p>
-                        <p className="mt-1 text-zinc-200">
-                          Новая заявка
-                        </p>
-                      </div>
-
-                      <div className="rounded-xl bg-black/20 p-3">
-                        <p className="text-zinc-500">Передача</p>
+                        <p className="text-zinc-500">Delivery</p>
                         <p className="mt-1 text-emerald-300">
-                          Отправлено в Telegram
+                          Sent to Telegram
                         </p>
                       </div>
                     </div>

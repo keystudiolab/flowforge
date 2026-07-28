@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -41,7 +41,7 @@ export default function Navbar() {
             onClick={() => scrollTo("about")}
             className="transition hover:text-white"
           >
-            О нас
+            About
           </button>
 
           <button
@@ -49,7 +49,7 @@ export default function Navbar() {
             onClick={() => scrollTo("services")}
             className="transition hover:text-white"
           >
-            Услуги
+            Services
           </button>
 
           <button
@@ -57,7 +57,7 @@ export default function Navbar() {
             onClick={() => scrollTo("cases")}
             className="transition hover:text-white"
           >
-            Кейсы
+            Cases
           </button>
 
           <button
@@ -65,7 +65,7 @@ export default function Navbar() {
             onClick={() => scrollTo("contact")}
             className="transition hover:text-white"
           >
-            Контакты
+            Contact
           </button>
         </nav>
 
@@ -73,14 +73,14 @@ export default function Navbar() {
           <div className="flex items-center rounded-xl border border-zinc-800 bg-zinc-950/70 p-1">
             <Link
               href="/"
-              className="rounded-lg bg-zinc-800 px-3 py-2 text-sm text-white"
+              className="rounded-lg px-3 py-2 text-sm text-zinc-500 transition hover:text-white"
             >
               RU
             </Link>
 
             <Link
               href="/en"
-              className="rounded-lg px-3 py-2 text-sm text-zinc-500 transition hover:text-white"
+              className="rounded-lg bg-zinc-800 px-3 py-2 text-sm text-white"
             >
               EN
             </Link>
@@ -91,7 +91,7 @@ export default function Navbar() {
             onClick={() => scrollTo("contact")}
             className="flex items-center gap-2 rounded-2xl bg-blue-600 px-6 py-3 font-semibold text-white transition duration-300 hover:scale-105 hover:bg-blue-500"
           >
-            Получить AI-аудит
+            Book a Demo
             <ArrowUpRight size={18} />
           </button>
         </div>
@@ -99,7 +99,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((current) => !current)}
-          aria-label={open ? "Закрыть меню" : "Открыть меню"}
+          aria-label={open ? "Close menu" : "Open menu"}
           className="text-white lg:hidden"
         >
           {open ? <X size={28} /> : <Menu size={28} />}
@@ -114,7 +114,7 @@ export default function Navbar() {
               onClick={() => scrollTo("about")}
               className="rounded-xl p-4 text-left text-zinc-300 transition hover:bg-zinc-900"
             >
-              О нас
+              About
             </button>
 
             <button
@@ -122,7 +122,7 @@ export default function Navbar() {
               onClick={() => scrollTo("services")}
               className="rounded-xl p-4 text-left text-zinc-300 transition hover:bg-zinc-900"
             >
-              Услуги
+              Services
             </button>
 
             <button
@@ -130,7 +130,7 @@ export default function Navbar() {
               onClick={() => scrollTo("cases")}
               className="rounded-xl p-4 text-left text-zinc-300 transition hover:bg-zinc-900"
             >
-              Кейсы
+              Cases
             </button>
 
             <button
@@ -138,20 +138,20 @@ export default function Navbar() {
               onClick={() => scrollTo("contact")}
               className="rounded-xl p-4 text-left text-zinc-300 transition hover:bg-zinc-900"
             >
-              Контакты
+              Contact
             </button>
 
             <div className="mt-3 flex gap-3">
               <Link
                 href="/"
-                className="flex-1 rounded-xl bg-zinc-800 py-3 text-center text-white"
+                className="flex-1 rounded-xl border border-zinc-800 py-3 text-center text-zinc-400"
               >
                 RU
               </Link>
 
               <Link
                 href="/en"
-                className="flex-1 rounded-xl border border-zinc-800 py-3 text-center text-zinc-400"
+                className="flex-1 rounded-xl bg-zinc-800 py-3 text-center text-white"
               >
                 EN
               </Link>
@@ -162,7 +162,7 @@ export default function Navbar() {
               onClick={() => scrollTo("contact")}
               className="mt-3 rounded-2xl bg-blue-600 py-4 font-semibold text-white"
             >
-              Получить AI-аудит
+              Book a Demo
             </button>
           </div>
         </div>
