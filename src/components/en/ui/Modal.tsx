@@ -17,7 +17,7 @@ export default function Modal({ open, onClose }: Props) {
 
   async function sendForm() {
     if (!name.trim() || !contact.trim() || !company.trim()) {
-      alert("Пожалуйста, заполните все поля.");
+      alert("Please complete all fields.");
       return;
     }
 
@@ -39,18 +39,18 @@ export default function Modal({ open, onClose }: Props) {
       const data = await response.json();
 
       if (!response.ok || !data.success) {
-        throw new Error(data.error || "Не удалось отправить заявку");
+        throw new Error(data.error || "Failed to send the request");
       }
 
-      alert("Заявка успешно отправлена. Мы скоро свяжемся с вами.");
+      alert("Your request has been received. We will contact you shortly.");
 
       setName("");
       setContact("");
       setCompany("");
       onClose();
     } catch (error) {
-      console.error("Ошибка отправки заявки:", error);
-      alert("Что-то пошло не так. Попробуйте ещё раз.");
+      console.error("Request submission error:", error);
+      alert("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -66,22 +66,22 @@ export default function Modal({ open, onClose }: Props) {
         onClick={(event) => event.stopPropagation()}
       >
         <span className="inline-flex rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-400">
-          Заказать демонстрацию
+          Book a Demo
         </span>
 
         <h2 className="mt-6 text-3xl font-bold text-white sm:text-4xl">
-          Наймите своего первого AI-сотрудника
+          Hire your first AI Employee
         </h2>
 
         <p className="mt-4 text-lg leading-8 text-zinc-400">
-          Расскажите о своём бизнесе. Мы подготовим персональную демонстрацию
-          AI-сотрудника для вашей компании.
+          Tell us about your business. We will prepare a personalized AI
+          Employee demo for your company.
         </p>
 
         <input
           type="text"
           autoComplete="name"
-          placeholder="Ваше имя"
+          placeholder="Your name"
           value={name}
           onChange={(event) => setName(event.target.value)}
           className="mt-10 w-full rounded-2xl border border-zinc-800 bg-zinc-900 p-5 text-white outline-none transition placeholder:text-zinc-600 focus:border-blue-500"
@@ -89,7 +89,7 @@ export default function Modal({ open, onClose }: Props) {
 
         <input
           type="text"
-          placeholder="Telegram или Email"
+          placeholder="Telegram or Email"
           value={contact}
           onChange={(event) => setContact(event.target.value)}
           className="mt-5 w-full rounded-2xl border border-zinc-800 bg-zinc-900 p-5 text-white outline-none transition placeholder:text-zinc-600 focus:border-blue-500"
@@ -97,7 +97,7 @@ export default function Modal({ open, onClose }: Props) {
 
         <textarea
           rows={5}
-          placeholder="Расскажите о своём бизнесе и задаче..."
+          placeholder="Tell us about your business and task..."
           value={company}
           onChange={(event) => setCompany(event.target.value)}
           className="mt-5 w-full resize-none rounded-2xl border border-zinc-800 bg-zinc-900 p-5 text-white outline-none transition placeholder:text-zinc-600 focus:border-blue-500"
@@ -109,7 +109,7 @@ export default function Modal({ open, onClose }: Props) {
           disabled={loading}
           className="mt-8 w-full rounded-2xl bg-blue-600 p-5 text-lg font-semibold text-white transition hover:bg-blue-500 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {loading ? "Отправка..." : "Заказать демонстрацию"}
+          {loading ? "Submitting..." : "Book a Demo"}
         </button>
 
         <button
@@ -118,7 +118,7 @@ export default function Modal({ open, onClose }: Props) {
           disabled={loading}
           className="mt-5 w-full text-zinc-500 transition hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
         >
-          Закрыть
+          Close
         </button>
       </div>
     </div>
