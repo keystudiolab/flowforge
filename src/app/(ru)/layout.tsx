@@ -70,6 +70,10 @@ export const metadata: Metadata = {
       "AI-сотрудники, Telegram-боты и автоматизация процессов для бизнеса.",
   },
 
+  verification: {
+    google: "gtZ3XLL20VYvUIviE5NB29mUpuyOtylNvR810962FJ8",
+  },
+
   robots: {
     index: true,
     follow: true,
