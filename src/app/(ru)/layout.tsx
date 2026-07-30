@@ -1,3 +1,4 @@
+import AnalyticsEvents from "@/components/analytics/AnalyticsEvents";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -99,6 +100,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">{children}
+        <AnalyticsEvents />
         <GoogleAnalytics gaId="G-73ZYKL86LS" />
       </body>
     </html>
